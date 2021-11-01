@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <title>CAPSTONE</title>
+  </head>
+  <body >
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Heart Disease Prediction</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <form action="{{url_for('result')}}" method="post">
+                    
+                    <div class="mb-3">
+                    	<label for="sex" class="form-label" >Sex</label><br>
+                    	<input type="radio" id="male" name="sex" value="0">
+                         <label for="male">Male</label><br>
+                         <input type="radio" id="female" name="sex" value="1">
+                         <label for="female">Female</label><br>
+                        <!-- <label for="sex" class="form-label" >Sex</label>
+                        <input type="text" class="form-control" name="sex"> -->
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="age" class="form-label">Age</label>
+                        <input type="text" class="form-control" name="age" required>
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label for="currentSmoker" class="form-label" >Do You Smoke?</label><br>
+                        <!-- <input type="text" class="form-control" name="cp"> -->
+                        <input type="radio" id="c1" name="currentSmoker" value="1">
+                         <label for="c1">Yes</label><br>
+                        <input type="radio" id="c2" name="currentSmoker" value="0">
+                        <label for="c2">No</label><br>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="cigsPerDay" class="form-label" >Cigarretes per Day</label>
+                        <input type="text" class="form-control" name="cigsPerDay" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="BPMeds" class="form-label" >Do You take BP medicines?</label><br>
+                        <input type="radio" id="bp1" name="BPMeds" value="1">
+                        <label for="bp1">Yes</label><br>
+                        <input type="radio" id="bp2" name="BPMeds" value="0">
+                        <label for="bp2">No</label><br>
+                    </div>
+                   
+                    <div class="mb-3">
+                        <label for="prevalentStroke" class="form-label" >Have you experienced any stroke</label><br>
+                        <input type="radio" id="ps1" name="prevalentStroke" value="1">
+                        <label for="ps1">Yes</label><br>
+                        <input type="radio" id="ps2" name="prevalentStroke" value="0">
+                        <label for="ps2">No</label><br>
+
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="prevalentHyp" class="form-label" >Do You have Hypertension</label><br>
+    
+                        <input type="radio" id="ph1" name="prevalentHyp" value="1">
+                        <label for="ph1">Yes</label><br>
+                        <input type="radio" id="ph2" name="prevalentHyp" value="0">
+                        <label for="ph2">No</label><br>
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="diabetes" class="form-label" >Do you have Diabetes</label><br>
+        
+                        <input type="radio" id="d1" name="diabetes" value="1">
+                        <label for="d1">Yes</label><br>
+                        <input type="radio" id="d2" name="diabetes" value="0">
+                        <label for="d2">No</label><br>
+                    </div>
+                    <div class="mb-3">
+                        <label for="totChol" class="form-label" >Total Cholestrol</label><br>
+                        <input type="text" class="form-control" name="totChol" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="slope" class="form-label">systolic blood pressure</label>
+                        <input type="text" class="form-control" name="sysBP" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="ca" class="form-label" >diastolic blood pressure</label>
+                        <input type="text" class="form-control" name="diaBP">
+                    </div>
+                    <div class="mb-3">
+                        <label for="BMI" class="form-label" >Body Mass Index (BMI)</label>
+                        <input type="text" class="form-control" name="BMI" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="heartRate" class="form-label" >Heart Rate (in BPS)</label>
+                        <input type="text" class="form-control" name="heartRate">
+                    </div>
+                    <button> <a href="/heart_control/">Click me</a></button>
+                    <div class="mb-3">
+                        <label for="glucose" class="form-label" >Blood Sugar Level</label>
+                        <input type="text" class="form-control" name="glucose" required>
+                    </div>
+					<div class="mb-3">
+                        <label for="mail" class="form-label" >Email ID</label>
+                        <input type="email" class="form-control" name="mail" required>
+                    </div>
+                      
+                      <button type="submit" class="btn btn-primary" value="predict">Get HeartRate and Predict</button>
+                        
+                </form>
+            </div>
+        </div>
+    </div>
